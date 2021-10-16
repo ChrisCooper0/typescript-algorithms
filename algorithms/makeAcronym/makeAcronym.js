@@ -1,11 +1,15 @@
 "use strict";
 // Write a function `makeAcronym` that accepts a sentence string as an argument. The function should return a string containing the first character of each word in the sentence
 var makeAcronym = function (str) {
-    var wordArr = str.split(" ");
-    var newStr = "";
-    for (var i = 0; i < wordArr.length; i++) {
-        newStr += wordArr[i].slice(0, 1);
+    var words = str.split(" ");
+    var acronym = "";
+    for (var i = 0; i < words.length; i++) {
+        var word = words[i];
+        acronym += word[0];
     }
-    return newStr;
+    return acronym.toUpperCase();
 };
-console.log(makeAcronym("Lorem ipsum dolor sit amet, consectetur adipiscing elit")); // Lidsacae
+console.log(makeAcronym("New York")); // NY
+console.log(makeAcronym("same stuff different day")); // SSDD
+console.log(makeAcronym("Laugh out loud")); // LOL
+console.log(makeAcronym("don't over think stuff")); // DOTS

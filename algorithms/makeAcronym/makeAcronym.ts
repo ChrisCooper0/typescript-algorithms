@@ -1,13 +1,16 @@
 // Write a function `makeAcronym` that accepts a sentence string as an argument. The function should return a string containing the first character of each word in the sentence
-const makeAcronym = (str: string): any => {
-  const wordArr = str.split(" ");
-  let newStr = "";
-  for (let i = 0; i < wordArr.length; i++) {
-    newStr += wordArr[i].slice(0, 1);
+
+let makeAcronym = (str: string) => {
+  let words = str.split(" ");
+  let acronym = "";
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    acronym += word[0];
   }
-  return newStr;
+  return acronym.toUpperCase();
 };
 
-console.log(
-  makeAcronym("Lorem ipsum dolor sit amet, consectetur adipiscing elit")
-); // Lidsacae
+console.log(makeAcronym("New York")); // NY
+console.log(makeAcronym("same stuff different day")); // SSDD
+console.log(makeAcronym("Laugh out loud")); // LOL
+console.log(makeAcronym("don't over think stuff")); // DOTS
