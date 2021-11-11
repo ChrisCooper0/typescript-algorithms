@@ -13,6 +13,19 @@ const makeMatrix = (m: any, n: any, value: any): any[][] => {
   return outsideArr;
 };
 
+// JavaScript alternative solution
+// let makeMatrix = (m, n, value) => {
+//   let matrix = [];
+//   for (let i = 0; i < m; i++) {
+//     matrix.push([]);
+//     for (let j = 0; j < n; j++) {
+//       matrix[i].push(value);
+//     }
+//   }
+
+//   return matrix;
+// };
+
 console.log(makeMatrix(3, 4, 1));
 console.log(makeMatrix(3, 5, null));
 // [
