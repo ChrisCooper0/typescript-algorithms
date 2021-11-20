@@ -2,7 +2,8 @@
 
 const twoSum = (numbers: number[], target: number): boolean => {
   for (let i = 0; i < numbers.length; i++) {
-    for (let j = numbers.length - 1; j > 0; j--) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      console.log(numbers[i], numbers[j]);
       if (numbers[i] + numbers[j] === target) {
         return true;
       }
@@ -15,4 +16,4 @@ console.log(twoSum([0, 1], 5)); // false
 console.log(twoSum([2, 3, 5, 9], 7)); // true
 console.log(twoSum([2, 3, 5, 9], 4)); // false
 console.log(twoSum([6, 3, 4], 10)); // true
-console.log(twoSum([6, 5, 1], 10)); // true
+console.log(twoSum([6, 5, 1], 10)); // false
