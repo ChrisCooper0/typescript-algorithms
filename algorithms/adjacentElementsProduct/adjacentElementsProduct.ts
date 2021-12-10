@@ -6,7 +6,7 @@ const adjacentElementsProduct = (arr: number[]): number => {
   let result = 0;
   for (let i = 0; i < arr.length; i++) {
     const product = arr[i] * arr[i - 1];
-    if (product > 0) {
+    if (product > result) {
       result = product;
     }
   }
@@ -14,3 +14,4 @@ const adjacentElementsProduct = (arr: number[]): number => {
 };
 
 console.log(adjacentElementsProduct([3, 6, -2, -5, 7, 3])); // 21
+console.log(adjacentElementsProduct([1, 6, -4, -2, 9, 5])); // 45
