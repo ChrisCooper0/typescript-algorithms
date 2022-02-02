@@ -13,18 +13,23 @@
 
 // In the given example all boundary pixels were cropped, and the value of the pixel in the middle was obtained as (1 + 1 + 1 + 1 + 7 + 1 + 1 + 1 + 1) / 9 = 15 / 9 = rounded down = 1.
 
-const boxBlur = (arr: number[][]): number => {
-  let flattenedArr = [];
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i; j < arr.length; j++) {
-      flattenedArr.push(arr[i][j]);
+const boxBlur = (arr: number[][]): number[][] => {
+  let finalArr = [];
+  for (let y = 0; y < arr.length - 2; y++) {
+    let line = [];
+    for (let x = 0; x < arr[y].length - 2; x++) {
+      let sum = 0;
+      let count = 0;
+      for (let a = y; a < y + 3; a++) {
+        for (let b = x; b < x + 3; b++) {
+          sum += arr[a][b];
+          count++;
+        }
+      }
+      line.push(Math.floor(sum / count));
     }
+    finalArr.push(line);
   }
-  let count = 0;
-  flattenedArr.forEach((item) => {
-    count += item;
-  });
-  let finalArr = Math.floor(count / flattenedArr.length);
   return finalArr;
 };
 
@@ -34,4 +39,4 @@ console.log(
     [1, 7, 1],
     [1, 1, 1],
   ])
-);
+); // [[1]]
