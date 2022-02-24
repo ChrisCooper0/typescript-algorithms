@@ -16,8 +16,8 @@ const composeRanges = (arr: number[]): string[] => {
   }
 
   for (let i = 0; i < ranges.length; i++) {
-    let start: number = ranges[i][0],
-      end: number = ranges[i][ranges[i].length - 1];
+    let start: number = ranges[i][0];
+    let end: number = ranges[i][ranges[i].length - 1];
     ranges[i] = ranges[i].length > 1 ? `${start} -> ${end}` : `${start}`;
   }
 
