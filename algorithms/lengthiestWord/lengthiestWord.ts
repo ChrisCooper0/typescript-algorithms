@@ -4,12 +4,24 @@ const lengthiestWord = (str: string): string => {
   let strArr = str.split(" ");
   let longWord = "";
 
+  // ForEach solution
   strArr.forEach((word) => {
     if (word.length >= longWord.length) {
       longWord = word;
     }
   });
   return longWord;
+
+  // For loop solution
+  // let strArr = str.split(" ");
+  // let longestWord = "";
+
+  // for (let i = 0; i < strArr.length; i++) {
+  //   if (longestWord.length < strArr[i].length) {
+  //     longestWord = strArr[i];
+  //   }
+  // }
+  // return longestWord;
 };
 
 console.log(lengthiestWord("a sentence string")); // sentence
