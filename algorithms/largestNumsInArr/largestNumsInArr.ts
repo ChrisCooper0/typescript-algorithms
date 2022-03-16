@@ -4,20 +4,22 @@
 const largestOfFour = (arr: number[][]): number[] => {
   let largestArr: number[] = [];
   for (let i = 0; i < arr.length; i++) {
+    let largestNum = 0;
     for (let j = 0; j < arr.length; j++) {
-      if (arr[i][j] > arr[i][j + 1]) {
-        largestArr.push(arr[i][j]);
+      if (arr[i][j] > largestNum) {
+        largestNum = arr[i][j];
       }
     }
+    largestArr.push(largestNum);
   }
   return largestArr;
 };
 
 console.log(
   largestOfFour([
-    [4, 5, 1, 3],
     [13, 27, 18, 26],
+    [4, 5, 1, 3],
     [32, 35, 37, 39],
     [1000, 1001, 857, 1],
   ])
-); // [5, 27, 1001, 857]
+); // [27, 5, 39, 1001]
