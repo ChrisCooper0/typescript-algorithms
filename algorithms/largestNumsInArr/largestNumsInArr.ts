@@ -4,8 +4,8 @@
 const largestOfFour = (arr: number[][]): number[] => {
   let largestArr: number[] = [];
   for (let i = 0; i < arr.length; i++) {
-    let largestNum = 0;
-    for (let j = 0; j < arr.length; j++) {
+    let largestNum = arr[i][0];
+    for (let j = 1; j < arr.length; j++) {
       if (arr[i][j] > largestNum) {
         largestNum = arr[i][j];
       }
@@ -17,9 +17,10 @@ const largestOfFour = (arr: number[][]): number[] => {
 
 console.log(
   largestOfFour([
+    [-3, -4, -17, -9],
     [13, 27, 18, 26],
     [4, 5, 1, 3],
     [32, 35, 37, 39],
     [1000, 1001, 857, 1],
   ])
-); // [27, 5, 39, 1001]
+); // [ -3, 27, 5, 39, 1001 ]
