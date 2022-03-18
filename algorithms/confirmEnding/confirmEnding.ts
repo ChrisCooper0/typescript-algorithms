@@ -11,6 +11,9 @@ const confirmEnding = (str: string, target: string): boolean => {
   // .substring() method
   let start = str.length - target.length;
   return str.substring(start) === target;
+
+  // .slice() method
+  // return str.slice(-target.length) === target;
 };
 
 console.log(confirmEnding("Abstraction", "action")); // true
