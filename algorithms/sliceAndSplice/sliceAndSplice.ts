@@ -5,9 +5,7 @@
 
 function frankenSplice(arr1: number[], arr2: number[], n: number): number[] {
   let newArray: number[] = [];
-  newArray.push(...arr2.slice(0, n));
-  newArray.push(...arr1);
-  newArray.push(...arr2.slice(n));
+  newArray.push(...arr2.slice(0, n), ...arr1, ...arr2.slice(n));
   return newArray;
 }
 
