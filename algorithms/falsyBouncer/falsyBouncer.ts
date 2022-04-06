@@ -5,9 +5,9 @@
 
 function bouncer(arr: any[]): any[] {
   let falseArray: any[] = [];
-  for (let i = 0; i < arr.length; i++) {
-    if (Boolean(arr[i]) === false) {
-      falseArray.push(arr[i]);
+  for (let item of arr) {
+    if (Boolean(item) === false) {
+      falseArray.push(item);
     }
   }
   return falseArray;
