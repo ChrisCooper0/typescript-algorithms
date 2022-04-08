@@ -6,14 +6,12 @@
 
 function getIndexToIns(arr: number[], num: number): number {
   let sortedArr = arr.sort((a: number, b: number) => a - b);
-  console.log(sortedArr);
-  let index: number = 0;
   for (let i = 0; i < sortedArr.length; i++) {
-    if (sortedArr[i - 1] < num && sortedArr[i] > num) {
-      index = i;
+    if (num <= sortedArr[i]) {
+      return i;
     }
   }
-  return index;
+  return sortedArr.length;
 }
 
 console.log(getIndexToIns([1, 2, 3, 4], 1.5)); // 1
