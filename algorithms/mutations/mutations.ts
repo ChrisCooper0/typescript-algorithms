@@ -20,4 +20,5 @@ function mutation(arr: string[]): boolean {
 }
 
 console.log(mutation(["hello", "hey"])); // false
-console.log(mutation(["hello", "he"])); // true
+console.log(mutation(["hello", "Hello"])); // true
+console.log(mutation(["Alien", "line"])); // true
