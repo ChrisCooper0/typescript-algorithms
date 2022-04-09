@@ -7,8 +7,17 @@
 
 // Lastly, ["Alien", "line"], should return true because all of the letters in line are present in Alien.
 
-// function mutation(arr) {
-//     return arr;
-//   }
+function mutation(arr: string[]): boolean {
+  let firstWord = arr[0].toLowerCase();
+  let secondWord = arr[1].toLowerCase();
 
-//   mutation(["hello", "hey"]);
+  for (let i = 0; i < secondWord.length; i++) {
+    if (firstWord.indexOf(secondWord[i]) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
+
+console.log(mutation(["hello", "hey"])); // false
+console.log(mutation(["hello", "he"])); // true
