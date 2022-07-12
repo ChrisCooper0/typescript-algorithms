@@ -5,5 +5,4 @@ const debounceLog = () => {
     console.log("log");
   }, 1000);
 };
-
 console.log(debounceLog());
