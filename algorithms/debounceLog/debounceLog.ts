@@ -1,4 +1,4 @@
-// Write a function which logs to the console after 1000ms
+// Write a function which logs to the console after 1000ms / 1s
 
 const debounceLog = () => {
   setTimeout(() => {
