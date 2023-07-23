@@ -9,7 +9,7 @@ async function sleep(millis: number): Promise<void> {
   //   return new Promise(cb);
 
   // Alternative solution
-  await new Promise((resolve, reject) => {
+  await new Promise((resolve, _reject) => {
     setTimeout(resolve, millis);
   });
 }
