@@ -17,5 +17,5 @@ function compose(functions: F[]): F {
   };
 }
 
-const fn = compose([(x) => x + 1, (x) => 2 * x]);
-console.log(fn(4)); // 9
+const funcComp = compose([(x) => x + 1, (x) => 2 * x]);
+console.log(funcComp(4)); // 9
